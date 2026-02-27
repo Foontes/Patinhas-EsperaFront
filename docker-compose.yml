@@ -1,0 +1,13 @@
+services:
+  patinhas_front:
+    container_name: patinhas_front
+    build: ./patinhasaespera
+    ports:
+      - "4200:4200"
+    networks:
+      - patinhas-network
+    command: ["ng", "serve", "--host", "0.0.0.0", "--port", "4200"]
+    
+networks:
+  patinhas-network:
+    driver: bridge
